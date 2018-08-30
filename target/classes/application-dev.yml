@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: ceod-metrics-service-dev
+  jpa:
+    hibernate.ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/data
+    username: root
+    password: root
+
