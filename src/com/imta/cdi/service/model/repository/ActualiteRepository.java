@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface ActualiteRepository extends CrudRepository<ActualiteEntity, Long> {
     List<ActualiteEntity> findAll();
+    ActualiteEntity findById(long Id);
 }
 
 

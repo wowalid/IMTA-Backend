@@ -4,6 +4,7 @@ package com.imta.cdi.service.model.controller;
 import com.imta.cdi.service.model.model.ActualiteEntity;
 import com.imta.cdi.service.model.repository.ActualiteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,4 +31,11 @@ public class ActualiteController {
         return "Article posté !";
     }
 
+    @DeleteMapping("/actu/delete/{id}")
+    public ResponseEntity<?> deleteActu(@PathVariable(value = "id") long Id) {
+        ActualiteEntity actu = actualiteRepository.findById(Id);
+        actualiteRepository.delete(actu);
+
+        return ResponseEntity.ok().build();
+    }
 }
