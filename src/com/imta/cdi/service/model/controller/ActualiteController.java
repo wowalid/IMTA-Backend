@@ -18,10 +18,11 @@ public class ActualiteController {
         return actualiteRepository.findAll();
     }
 
-    @PutMapping("/actu/post")
-    String postActu(@RequestBody ActualiteEntity actu) {
+    @RequestMapping(value="/actu/post", method=RequestMethod.POST)
+    String postActu(@RequestBody ActualiteEntity article) {
         try{
-            actualiteRepository.save(actu);
+            System.out.println(article.toString());
+            actualiteRepository.save(article);
         }
         catch(Exception e){
             return "Erreur";
