@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ceod-metrics-service-dev
+    name: cdi-backend
   jpa:
     hibernate.ddl-auto: update
   datasource:
