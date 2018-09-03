@@ -31,8 +31,8 @@ public class HoraireController {
         return "Horaire posté !";
     }
 
-    @DeleteMapping("/horaires/delete/{id}")
-    public ResponseEntity<?> deleteHoraire(@PathVariable(value = "id") long Id) {
+    @DeleteMapping("/horaires/delete")
+    public ResponseEntity<?> deleteHoraire(@RequestParam(value = "id") long Id) {
         HoraireEntity horaire = horaireRepository.findById(Id);
         horaireRepository.delete(horaire);
 

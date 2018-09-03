@@ -19,6 +19,7 @@ public class ActualiteController {
         return actualiteRepository.findAll();
     }
 
+
     @RequestMapping(value="/actu/post", method=RequestMethod.POST)
     String postActu(@RequestBody ActualiteEntity article) {
         try{
@@ -31,13 +32,15 @@ public class ActualiteController {
         return "Article posté !";
     }
 
-    @DeleteMapping("/actu/delete/{id}")
-    public ResponseEntity<?> deleteActu(@PathVariable(value = "id") long Id) {
+    @DeleteMapping("/actu/delete")
+    public ResponseEntity<?> deleteActu(@RequestParam(value = "id") long Id) {
         ActualiteEntity actu = actualiteRepository.findById(Id);
         actualiteRepository.delete(actu);
 
         return ResponseEntity.ok().build();
     }
+
+
 
 
 }

@@ -35,12 +35,15 @@ public class SalleController {
         return "Salle bien ajoutée !";
     }
 
-    @DeleteMapping("salle/delete/{id}")
-    public ResponseEntity<?> deleteSalle(@PathVariable(value="id") long idsalle) {
+    @DeleteMapping("salle/delete")
+    public ResponseEntity<?> deleteSalle(@RequestParam(value="id") long idsalle) {
         SalleEntity salle = salleRepository.findById(idsalle);
         salleRepository.delete(salle);
 
         return ResponseEntity.ok().build();
 
     }
+
+
+
 }
