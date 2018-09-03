@@ -17,8 +17,8 @@ public class SalleController {
     @GetMapping("/salle/get-all")
     List<SalleEntity> all() { return salleRepository.findAll();}
 
-    @GetMapping("/salle/get/{id}")
-    public SalleEntity getById(@PathVariable(value="id") long idsalle){
+    @GetMapping("/salle/get")
+    public SalleEntity getById(@RequestParam(value="id") long idsalle){
             SalleEntity salle = salleRepository.findById(idsalle);
             return salle;
     }
