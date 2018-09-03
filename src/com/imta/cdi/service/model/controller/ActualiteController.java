@@ -38,4 +38,6 @@ public class ActualiteController {
 
         return ResponseEntity.ok().build();
     }
+
+
 }

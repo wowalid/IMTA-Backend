@@ -1,11 +1,8 @@
 package com.imta.cdi.service.model.model;
 
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
